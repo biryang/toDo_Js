@@ -1,7 +1,9 @@
+
 const weather = document.querySelector('.js-weather');
+const WEHATHER_API_KEY = 'f43b6091aeecd0a0ceb08b6c18646376'
 
 async function getWeather(lat, long) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.WEHATHER_API_KEY}&units=metric`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${WEHATHER_API_KEY}&units=metric`;
   try {
     const res = await fetch(url);
     const data = await res.json();
@@ -33,4 +35,5 @@ function askForCoords() {
 function weatherInit() {
   askForCoords();
 }
+
 weatherInit();

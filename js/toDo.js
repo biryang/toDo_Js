@@ -126,19 +126,16 @@ function paintTodo(id, text, statsu) {
 function loadtodo() {
   const pendtodo = localStorage.getItem(TODO_PEND);
   const finishtodo = localStorage.getItem(TODO_FINISH);
-  console.log(finishtodo);
 
   if (pendtodo !== null) {
     const parsedtodo = JSON.parse(pendtodo);
     parsedtodo.forEach(function (todo) {
-      console.log("p", todo);
       paintTodo(todo.id, todo.text, TODO_PEND);
     });
   }
   if (finishtodo !== null) {
     const parsedtodo = JSON.parse(finishtodo);
     parsedtodo.forEach(function (todo) {
-      console.log("p", todo);
       paintTodo(todo.id, todo.text, TODO_FINISH);
     });
   }
